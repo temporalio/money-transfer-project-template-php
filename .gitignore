@@ -1,0 +1,22 @@
+# IDEA
+.idea/
+*.iml
+
+# Composer
+vendor/
+composer.phar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.php_cs.cache
+
+# Other
+/*.exe
+/rr
+/temporal
+/temporal-test-server
+/.ai
+/.context

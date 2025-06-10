@@ -1,0 +1,57 @@
+{
+    "name": "temporalio/money-transfer-project-template",
+    "type": "project",
+    "license": "MIT",
+    "description": "Temporal Money Transfer Project Template",
+    "homepage": "https://temporal.io",
+    "keywords": [
+        "sdk",
+        "api",
+        "library",
+        "temporal",
+        "event-sourcing",
+        "workflow",
+        "activity",
+        "service-bus"
+    ],
+    "support": {
+        "forum": "https://community.temporal.io",
+        "docs": "https://docs.temporal.io",
+        "issues": "https://github.com/temporalio/sdk-php/issues",
+        "source": "https://github.com/temporalio/sdk-php"
+    },
+    "require": {
+        "php": ">=8.1",
+        "temporal/sdk": "^2.14.1"
+    },
+    "require-dev": {
+        "buggregator/trap": "^1.13.0",
+        "internal/dload": "^1.2.0",
+        "phpunit/phpunit": "10.5.45",
+        "spiral/code-style": "~2.2.2",
+        "spiral/core": "^3.14.9",
+        "vimeo/psalm": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "composer get:binaries",
+        "post-update-cmd": "composer get:binaries",
+        "get:binaries": [
+            "dload get --no-interaction -vv",
+            "Temporal\\Worker\\Transport\\RoadRunnerVersionChecker::postUpdate"
+        ],
+        "cs:diff": "php-cs-fixer fix --dry-run -v --diff --show-progress dots",
+        "cs:fix": "php-cs-fixer fix -v",
+        "psalm": "psalm",
+        "psalm:baseline": "psalm --set-baseline=psalm-baseline.xml"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
