@@ -1,17 +1,17 @@
 # IDEA
-.idea/
+/.idea
 *.iml
 
 # Composer
-vendor/
-composer.phar
+/vendor
+/composer.phar
 
 # OS
 .DS_Store
 Thumbs.db
 
 # Cache
-.php_cs.cache
+/runtime
 
 # Other
 /*.exe

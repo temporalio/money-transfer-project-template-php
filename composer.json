@@ -1,5 +1,5 @@
 {
-    "name": "temporalio/money-transfer-project-template",
+    "name": "temporal/money-transfer-project",
     "type": "project",
     "license": "MIT",
     "description": "Temporal Money Transfer Project Template",

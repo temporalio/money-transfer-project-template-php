@@ -1,0 +1,16 @@
+version: "3"
+# Application configuration
+rpc:
+    listen: tcp://127.0.0.1:6001
+
+server:
+    command: "php src/worker.php"
+
+# Workflow and activity mesh service
+temporal:
+    address: "localhost:7233"
+
+logs:
+    channels:
+        server: # mapped to only server plugin
+            level: info
