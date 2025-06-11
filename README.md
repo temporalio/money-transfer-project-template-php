@@ -1,6 +1,6 @@
 # Money Transfer Project
 
-This is the code to support the tutorial at ___
+This is the companion code for the tutorial [Run your first Temporal Application with PHP](https://learn.temporal.io/getting_started/php/hello_world_in_php/).
 
 ## Getting Started
 
