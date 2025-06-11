@@ -52,7 +52,7 @@ final class MoneyTransfer
             return "Transfer complete (transaction IDs: {$withdrawOutput}, {$depositOutput})";
         } catch (\Throwable $depositError) {
             # Handle deposit error
-            Workflow::logger()->error("Deposit failed: {$depositError->getMessage()}");
+            Workflow::getLogger()->error("Deposit failed: {$depositError->getMessage()}");
 
             # Attempt to refund
             try {
