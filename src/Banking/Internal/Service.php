@@ -13,7 +13,7 @@ use App\Banking\Exception\InvalidAccount;
  * The BankingService class provides methods for simulating deposits and withdrawals
  * from bank accounts, as well as a method for simulating a deposit that always fails.
  */
-class Service
+final class Service
 {
     private MockBank $mockBank;
 

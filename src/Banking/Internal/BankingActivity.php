@@ -16,6 +16,7 @@ final class BankingActivity implements Banking
         private readonly Service $bank,
     ) {}
 
+    #[\Override]
     public function withdraw(PaymentDetails $data): string
     {
         $referenceId = $data->referenceId . "-withdrawal";
@@ -34,6 +35,7 @@ final class BankingActivity implements Banking
         }
     }
 
+    #[\Override]
     public function deposit(PaymentDetails $data): string
     {
         $referenceId = $data->referenceId . "-deposit";
@@ -59,6 +61,7 @@ final class BankingActivity implements Banking
         }
     }
 
+    #[\Override]
     public function refund(PaymentDetails $data): string
     {
         $referenceId = $data->referenceId . "-refund";
