@@ -9,7 +9,7 @@ Before you start, make sure you have PHP version 8.1 or higher and [Composer](ht
 ### Install the project with Composer
 
 ```bash
-composer create-project --prefer-dist temporal/money-transfer-project
+composer create-project --prefer-dist -sdev temporal/money-transfer-project
 cd temporal/money-transfer-project
 ```
 
