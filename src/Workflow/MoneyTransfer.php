@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Workflow;
 
 use App\Banking\Banking;
+use App\Banking\Exception\InsufficientFunds;
+use App\Banking\Exception\InvalidAccount;
 use App\Banking\PaymentDetails;
 use Temporal\Activity\ActivityOptions;
 use Temporal\Common\RetryOptions;
@@ -30,8 +32,8 @@ final class MoneyTransfer
                 ->withRetryOptions(
                     RetryOptions::new()
                         ->withMaximumAttempts(3)
-                        ->withMaximumInterval('2 seconds'),
-                    // ->withNonRetryableExceptions(['InvalidAccount', 'InsufficientFunds']),
+                        ->withMaximumInterval('2 seconds')
+                        ->withNonRetryableExceptions([InvalidAccount::class, InsufficientFunds::class]),
                 ),
         );
     }
