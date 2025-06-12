@@ -17,6 +17,7 @@
     },
     "require": {
         "php": ">=8.1",
+        "ext-grpc": "*",
         "symfony/polyfill-php83": "*",
         "temporal/sdk": "^2.14.1"
     },
