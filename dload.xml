@@ -5,7 +5,7 @@
     <actions>
         <download software="rr" version="^2025.1.1"/>
         <download software="temporal" version="^1.3"/>
-        <download software="temporal-tests-server"/>
+        <!--<download software="temporal-tests-server"/>-->
     </actions>
     <registry>
         <software name="Temporal Tests Server" alias="temporal-tests-server">
