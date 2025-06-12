@@ -4,7 +4,9 @@ This is the companion code for the tutorial [Run your first Temporal Application
 
 ## Getting Started
 
-Before you start, make sure you have PHP version 8.1 or higher and [Composer](https://getcomposer.org) installed in your environment.
+Before running this application, ensure you have the following installed:
+- [PHP 8.1 or later](https://www.php.net/downloads.php) with the [`ext-grpc`](https://pecl.php.net/package/grpc) extension.
+- [Composer](https://getcomposer.org) for managing dependencies.
 
 ### Install the project with Composer
 
@@ -51,7 +53,7 @@ To execute the money transfer workflow, you can use the provided PHP script.
 This script will initiate a transfer between two accounts.
 
 ```bash
-php bin/transfer.php
+php src/transfer.php
 ```
 
 ### Open the Web UI
