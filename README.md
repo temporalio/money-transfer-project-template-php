@@ -12,7 +12,7 @@ Before running this application, ensure you have the following installed:
 
 ```bash
 composer create-project --prefer-dist -sdev temporal/money-transfer-project
-cd temporal/money-transfer-project
+cd money-transfer-project
 ```
 
 This command will create a new project from the template.
