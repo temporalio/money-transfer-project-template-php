@@ -5,8 +5,19 @@ rpc:
 server:
     command: "php src/worker.php"
 
+# Connect the RoadRunner worker to Temporal Cloud. The address and namespace
+# are supplied via environment variables. NOTE: the RoadRunner Temporal plugin
+# authenticates with mTLS (client cert/key), not API keys, so the worker uses
+# certificate paths from the environment while the client (src/transfer.php)
+# uses an API key.
 temporal:
-    address: "localhost:7233"
+    address: ${TEMPORAL_ADDRESS}
+    namespace: ${TEMPORAL_NAMESPACE}
+    tls:
+        key: ${TEMPORAL_TLS_KEY}
+        cert: ${TEMPORAL_TLS_CERT}
+        root_ca: ${TEMPORAL_TLS_ROOT_CA}
+        server_name: ${TEMPORAL_TLS_SERVER_NAME}
 
 logs:
     channels:

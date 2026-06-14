@@ -6,6 +6,7 @@ namespace App\Worker;
 
 use App\Banking\PaymentDetails;
 use App\Workflow\MoneyTransfer;
+use Temporal\Client\ClientOptions;
 use Temporal\Client\GRPC\ServiceClient;
 use Temporal\Client\WorkflowClient;
 use Temporal\Client\WorkflowOptions;
@@ -14,9 +15,12 @@ use Temporal\Exception\Client\WorkflowFailedException;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-# Create client connected to server at the given address
+# Connect to Temporal Cloud using the gRPC endpoint, namespace, and API key
+# supplied via environment variables, over a secure (TLS) connection.
 $client = WorkflowClient::create(
-    ServiceClient::create('127.0.0.1:7233'),
+    ServiceClient::createSSL((string) getenv('TEMPORAL_ADDRESS'))
+        ->withAuthKey((string) getenv('TEMPORAL_API_KEY')),
+    (new ClientOptions())->withNamespace((string) getenv('TEMPORAL_NAMESPACE')),
 );
 
 $paymentDetails = new PaymentDetails(
